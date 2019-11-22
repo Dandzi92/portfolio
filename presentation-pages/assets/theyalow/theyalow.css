@@ -1,0 +1,64 @@
+a {
+  display: block;
+}
+
+.button {
+  width: 120px;
+  height: 70px;
+  border: none;
+  border-radius: 5%;
+  position: fixed;
+  z-index: 2;
+  top: 500px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.return {
+  background-color: red;
+  left: 100px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.size {
+  background-color: teal;
+  right: 100px;
+  cursor: pointer;
+}
+
+iframe {
+  display: block;
+  z-index: 1;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.mobile {
+  width: 640px;
+  height: 1545px;
+  margin: 0 auto;
+}
+
+.desktop {
+  height: 1850px;
+  width: 1300px;
+}
+
+iframe {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+iframe::-webkit-scrollbar {
+  /* WebKit */
+
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
