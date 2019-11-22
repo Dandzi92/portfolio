@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <section class="name">
+            <figure>
+                <img class="avatar" src="assets/images/photo.png" alt="denis danilkov's photo">
+                <figcaption>Denis Danilkov</figcaption>
+            </figure>
+            <section class="contacts">
+
+                <h2>Contact Info</h2>
+                <ul>
+                    <li>Email: ddanilkov@mail.ru, kvantokost@gmail.com</li>
+                    <li>Discord: Denis (kelvin-disando)#6169</li>
+                    <li><a href="https://www.facebook.com/denis.danilkov">My Facebook</a></li>
+                    <li>Telegram: @KelvinDisando</li>
+                    <li><a href="https://github.com/Kelvin-Disando?tab=repositories">My Github</a></li>
+                </ul>
+
+            </section>
+        </section>
+        <hr>
+        <section class="education">
+            <h2 class="education--interaction collapsible_unit">Education</h2>
+            <div class="content">
+               <p>middle School - 1999/2010</p>
+                <p>University - 2010/2015</p>
+                <p>Rolling Scopes School - 2019/2020</p></div> 
+        </section>
+        <hr>
+        <section class="projects">
+            <h2 class="projects--title">Projects</h2>
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class='swiper_content'>
+                            <div class="projects--description">
+                                <div class="description--title">theyalow</div>
+                                <ul class="description--features">
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>Adaptive Design</li>
+                                </ul>
+                                <div class='description--action'>click on image</div>
+                            </div>
+                            <div class="projects--container">
+                                <a class="projects--link" href="./projects/theyalow/index.html">
+                                    <img class="projects--image" src="./assets/images/theyalow.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class='swiper_content'>
+                            <div class="projects--description">
+                                <div class="description--title">repair-design-project</div>
+                                <ul class="description--features">
+                                    <li>HTML</li>
+                                    <li>CSS</li>
+                                    <li>Responsive Design</li>
+                                    <li>Sass</li>
+                                    <li>Webpack</li>
+                                </ul>
+                                <div class="description--action">click on image</div>
+                            </div>
+                            <div class="projects--container">
+                                <a class="projects--link" href="./projects/repair-design-project/index.html">
+                                    <img class="projects--image" src="./assets/images/repair.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <!-- <div class="swiper-pagination"></div> -->
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <!-- If we need scrollbar -->
+                <!-- <div class="swiper-scrollbar"></div> -->
+            </div>
+        </section>
+    </main>
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // If we need pagination
+
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+        })
+    </script>
+    <script>
+        var coll = document.getElementsByClassName("collapsible_unit");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
