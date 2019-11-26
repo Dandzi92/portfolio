@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Muli:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/swiper.css">
+    <title>Portfolio</title>
 </head>
 
 <body>
     <main>
         <section class="name">
-            <figure>
+            <figure class="name--photo">
                 <img class="avatar" src="assets/images/photo.png" alt="denis danilkov's photo">
                 <figcaption>Denis Danilkov</figcaption>
             </figure>
@@ -43,9 +43,7 @@
         <section class="projects">
             <h2 class="projects--title">Projects</h2>
             <div class="swiper-container">
-                <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
-                    <!-- Slides -->
                     <div class="swiper-slide">
                         <div class='swiper_content'>
                             <div class="projects--description">
@@ -62,6 +60,7 @@
                                     <img class="projects--image" src="./assets/images/theyalow.png" alt="">
                                 </a>
                             </div>
+                            <div class="projects--mobile_action">Swipe to see other</div>
                         </div>
                     </div>
                     <div class="swiper-slide">
@@ -82,42 +81,29 @@
                                     <img class="projects--image" src="./assets/images/repair.png" alt="">
                                 </a>
                             </div>
+                            <div class="projects--mobile_action">Swipe to see other</div>
                         </div>
                     </div>
                 </div>
-                <!-- If we need pagination -->
-                <!-- <div class="swiper-pagination"></div> -->
-                <!-- If we need navigation buttons -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
-                <!-- If we need scrollbar -->
-                <!-- <div class="swiper-scrollbar"></div> -->
             </div>
         </section>
     </main>
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script>
         var mySwiper = new Swiper('.swiper-container', {
-            // Optional parameters
             direction: 'horizontal',
             loop: true,
-
-            // If we need pagination
-
-
-            // Navigation arrows
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             },
-
-            // And if we need scrollbar
         })
     </script>
     <script>
         var coll = document.getElementsByClassName("collapsible_unit");
         var i;
-
         for (i = 0; i < coll.length; i++) {
             coll[i].addEventListener("click", function () {
                 this.classList.toggle("active");

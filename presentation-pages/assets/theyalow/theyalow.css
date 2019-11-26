@@ -48,7 +48,7 @@ iframe {
 
 .desktop {
   height: 1850px;
-  width: 1300px;
+  width: 100vw;
 }
 
 iframe {
