@@ -89,11 +89,16 @@ figcaption {
   color: #ffffff;
 }
 
-.contacts {
+section.contacts {
+  @media (max-width: 500px) {
+    margin: 0;
+    font-size: 0.45rem;
+  }
   align-items: center;
   align-content: center;
   display: flex;
   flex-direction: column;
+ 
 }
 
 /*collapsible*/
