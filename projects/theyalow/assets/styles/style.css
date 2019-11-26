@@ -63,6 +63,10 @@
   margin-inline-end: 0;
 }
 
+.wrapper-container {
+  min-width: 640px;
+}
+
 @media (min-width: 641px) {
 	.wrapper-container {
     max-width: 1300px;
