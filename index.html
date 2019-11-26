@@ -35,9 +35,10 @@
         <section class="education">
             <h2 class="education--interaction collapsible_unit">Education</h2>
             <div class="content">
-               <p>middle School - 1999/2010</p>
+                <p>middle School - 1999/2010</p>
                 <p>University - 2010/2015</p>
-                <p>Rolling Scopes School - 2019/2020</p></div> 
+                <p>Rolling Scopes School - 2019/2020</p>
+            </div>
         </section>
         <hr>
         <section class="projects">
@@ -46,25 +47,17 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class='swiper_content'>
-                            <div class="projects--description">
-                                <div class="description--title">theyalow</div>
+                            <div class="mobile_collapsible">show description</div>
+                            <div class="mobile_content">
+                                <div class="description--title">repair-design-project</div>
                                 <ul class="description--features">
                                     <li>HTML</li>
                                     <li>CSS</li>
-                                    <li>Adaptive Design</li>
+                                    <li>Responsive Design</li>
+                                    <li>Sass</li>
+                                    <li>Webpack</li>
                                 </ul>
-                                <div class='description--action'>click on image</div>
                             </div>
-                            <div class="projects--container">
-                                <a class="projects--link" href="./presentation-pages/theyalow.html">
-                                    <img class="projects--image" src="./assets/images/theyalow.png" alt="">
-                                </a>
-                            </div>
-                            <div class="projects--mobile_action">Swipe to see other</div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class='swiper_content'>
                             <div class="projects--description">
                                 <div class="description--title">repair-design-project</div>
                                 <ul class="description--features">
@@ -84,17 +77,47 @@
                             <div class="projects--mobile_action">Swipe to see other</div>
                         </div>
                     </div>
+                    <div class="swiper-slide">
+                            <div class='swiper_content'>
+                                <div class="mobile_collapsible">show description</div>
+                                <div class="mobile_content">
+                                    <div class="description--title">theyalow</div>
+                                    <ul class="description--features">
+                                        <li>HTML</li>
+                                        <li>CSS</li>
+                                        <li>Adaptive Design</li>
+                                    </ul>
+                                </div>
+                                <div class="projects--description">
+                                    <div class="description--title">theyalow</div>
+                                    <ul class="description--features">
+                                        <li>HTML</li>
+                                        <li>CSS</li>
+                                        <li>Adaptive Design</li>
+                                    </ul>
+                                    <div class='description--action'>click on image</div>
+                                </div>
+                                <div class="projects--container">
+                                    <a class="projects--link" href="./presentation-pages/theyalow.html">
+                                        <img class="projects--image" src="./assets/images/theyalow.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="projects--mobile_action">Swipe to see other</div>
+                            </div>
+                        </div>
                 </div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
         </section>
     </main>
+    
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <script>
         var mySwiper = new Swiper('.swiper-container', {
             direction: 'horizontal',
             loop: true,
+            loopedSlides: 0,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
@@ -102,20 +125,77 @@
         })
     </script>
     <script>
-        var coll = document.getElementsByClassName("collapsible_unit");
-        var i;
-        for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
-        }
-    </script>
+            //desktop collapsible
+            var coll = document.getElementsByClassName("collapsible_unit");
+            var i;
+            for (i = 0; i < coll.length; i++) {
+                coll[i].onclick = function () {
+                    event.stopPropagation()
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display == "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                };
+            }
+            //mobile description collapsible
+            var togglerMobile = document.getElementsByClassName("mobile_collapsible");
+            //for (var u = 0; u < togglerMobile.length; u++) {
+                togglerMobile[1].onclick = function () {
+                    this.classList.toggle("active");
+                    var neighbor = this.nextElementSibling;
+                    if (neighbor.style.display === "block") {
+
+                        neighbor.style.display = "none";
+                        togglerMobile[1].textContent = 'show description'
+                       
+                        
+                    } else {
+                        //togglerMobile[u].textContent = 'hide description'
+                        neighbor.style.display = "block";
+                        togglerMobile[1].textContent = 'hide description'
+                    }
+                };
+                togglerMobile[2].onclick = function () {
+                    this.classList.toggle("active");
+                    var neighbor = this.nextElementSibling;
+                    if (neighbor.style.display === "block") {
+
+                        neighbor.style.display = "none";
+                        togglerMobile[2].textContent = 'show description'
+                       
+                        
+                    } else {
+                        //togglerMobile[u].textContent = 'hide description'
+                        neighbor.style.display = "block";
+                        togglerMobile[2].textContent = 'hide description'
+                    }
+                };
+            //}
+            //mobile description collapsible
+            // var swiperToggler = document.querySelectorAll(".mobile_collapsible");
+                
+            // swiperToggler.addEventListener("click", function () {
+            //     event.preventDefault()
+            //         if (swiperToggler.textContent === 'show description') {
+            //         swiperToggler.textContent = 'hide description'
+            //     }
+            //     else {swiperToggler.textContent = 'show description'}
+            //         this.classList.toggle("active");
+            //         var kontent = this.nextElementSibling;
+            //         if (Array.from(kontent.classList).includes('activated')) {
+            //             kontent.classList.remove('activated');
+
+            //         } else {
+            //             kontent.classList.add('activated');
+            //         }
+            //     });
+           
+    
+            
+        </script>
 </body>
 
 </html>
